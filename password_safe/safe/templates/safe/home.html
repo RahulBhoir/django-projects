@@ -1,0 +1,21 @@
+{% extends 'safe/base.html' %}
+
+{% block content %}
+<div>
+    {% if user.is_authenticated %}
+    <h2>Save account details</h2>
+    <form action="{% url 'safe-home' %}" , method="POST">
+        {% csrf_token %}
+        <label for="site_name">Website Name</label>
+        <input type="text" name="site_name">
+        <label for="">Username</label>
+        <input type="text" name="user_name" id="">
+        <label for="">Password</label>
+        <input type="text" name="password" id="">
+        <input type="submit" value="save" id='btn-save'>
+    </form>
+    {% else %}
+    <p>want to save account detials? login to password safe :) </p>
+    {% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'safe/base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+    #register-block {
+        position: relative;
+        margin-top: 5%;
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+</style>
+
+<div id="register-block">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy}}
+        <input type="submit" value="Sign Up">
+    </form>
+</div>
+
+{% endblock content %}

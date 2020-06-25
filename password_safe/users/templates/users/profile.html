@@ -1,0 +1,12 @@
+{% extends 'safe/base.html' %}
+
+{% block content %}
+<style>
+    b {
+        display: block;
+    }
+</style>
+<h2>Profile</h2>
+<b>Username- {{ user.username}}</b>
+<b>Email- {{ user.email}}</b>
+{% endblock content %}

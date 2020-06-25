@@ -1,8 +1,5 @@
-#project-title{
-    position: relative;
-    margin-top: 0;
-}
-#navb{
+
+#navbar{
     position: relative;
     height: 10%;
     width: 100%;
@@ -26,14 +23,4 @@ li a {
 }
 a{
     color:azure
-}
-
-#content{
-    margin-top: 10px;
-}
-
-
-#blog-content{
-    display: block;
-    height: 50px;
 }

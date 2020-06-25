@@ -1,0 +1,44 @@
+{% extends 'safe/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'safe/display.css' %}">
+
+{% if database %}
+<table style="width:100%">
+    <tr>
+        <th>website</th>
+        <th>username</th>
+        <!-- <th>password</th> -->
+        <th>show password</th>
+        <th>upadate details</th>
+        <th>delete</th>
+    </tr>
+    {% for data in database %}
+    <tr>
+
+        <td>{{data.site_name}}</td>
+        <td>{{data.username}}</td>
+        <!-- <td>{{data.password}}</td> -->
+        <td><button type="submit">
+                <a href="{% url 'show-password' data.id %}">
+                    show
+                </a></button>
+        </td>
+        <td><button type="submit">
+                <a href="{% url 'update-details' data.id %}">
+                    update
+                </a></button>
+        </td>
+        <td><button type="submit">
+                <a href="{% url 'delete-password' data.id %}">
+                    delete
+                </a></button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h2>No details saved yet</h2>
+{% endif %}
+{% endblock content %}

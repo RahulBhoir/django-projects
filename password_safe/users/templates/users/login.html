@@ -1,0 +1,49 @@
+{% extends 'safe/base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- Styling -->
+<style>
+    #login-form {
+        position: relative;
+        margin-top: 5%;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #register-link {
+        color: blue;
+    }
+
+    #message {
+        position: relative;
+        margin-top: 5%;
+        background-color: lightgreen;
+    }
+</style>
+
+
+{% if messages %}
+{% for message in messages %}
+<div id="message">
+    <p>{{message}}</p>
+</div>
+{% endfor %}
+{% endif %}
+{% if user.is_authenticated %}
+<h2>you are logged in</h2>
+{% else %}
+<div id=login-form>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>User Login</legend>
+            {{form|crispy }}
+        </fieldset>
+        <input type="submit" value="Login">
+    </form>
+    <div class="mt-2">
+        <p>Create Account? <a id="register-link" href="{% url 'register'%}">Sign Up</a></p>
+    </div>
+</div>
+{% endif %}
+{% endblock content %}

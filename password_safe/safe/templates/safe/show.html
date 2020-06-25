@@ -1,0 +1,24 @@
+{% extends 'safe/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'safe/display.css' %}">
+<div>
+    <legend>
+        <h2>Your Account details</h2>
+    </legend>
+
+    <table style="width:100%">
+        <tr>
+            <th>website</th>
+            <th>username</th>
+            <th>password</th>
+        </tr>
+        <tr>
+            <td>{{website}}</td>
+            <td>{{username}}</td>
+            <td>{{password}}</td>
+        </tr>
+    </table>
+</div>
+
+{% endblock content %}

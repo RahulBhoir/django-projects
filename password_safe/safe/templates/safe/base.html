@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'static/base.css' %}">
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li a {
+            display: block;
+            padding: 10px;
+            background-color: green;
+        }
+
+        li {
+            float: left;
+        }
+
+        a {
+            color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>Password Safe</h3>
+    </div>
+    <div>
+        <ul id="navbar">
+            <li><a href="{% url 'safe-home' %}">Home</a></li>
+
+            {% if user.is_authenticated%}
+            <li><a href="{% url 'profile' %}">Profile</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="{% url 'display-password' %}">Passwords</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+
+            <li><a href="{% url 'contact-us'%}">Contact Us</a></li>
+        </ul>
+    </div>
+    <div>
+        {% block content %}{% endblock content %}
+    </div>
+</body>
+
+</html>
