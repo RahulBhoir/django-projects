@@ -1,0 +1,26 @@
+{% extends 'blog/base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+    #box1 {
+        margin-left: 40%;
+        height: 20%;
+    }
+
+    img {
+        height: 60px;
+        width: 40%;
+    }
+</style>
+
+<div class="content-section" , id="box1">
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+    </div>
+    <div class="media-body">
+        <h3 class="account-heading">Username- {{user.username}}</h3>
+        <h4 class="text-secondary">Email- {{user.email }}</h4>
+    </div>
+</div>
+
+{%endblock content %}

@@ -1,0 +1,13 @@
+1. open ternimal
+2. change the location where you want to store your django project
+3. type command "django-admin startproject project_name" --> django project will be created
+
+change loaction to the project folder
+
+4. type command "python manage.py runserver" --> tells us that is the prject working fine or not
+5. type command "python manage.py startapp app_name" --> creates app in project folder
+
+
+after creating templates folder, mention its path in settings -> TEMPLATES[] -> DIR = [path]
+
+after creating views in views.py, mention them in urls.py

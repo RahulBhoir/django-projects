@@ -1,0 +1,40 @@
+<!-- inline not working -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        li {
+            font-style: italic;
+            color: orangered;
+        }
+
+        #deleteForm {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My List</h1>
+    <ul>
+        {% for items in list %}
+        <li id="list">{{ items.content }}</li>
+        <form id="deleteForm" action="/deleteTodo/{{ items.id }}/" method="POST">{% csrf_token %}
+            <input type="submit" value="Delete">
+        </form>
+        {% endfor %}
+    </ul>
+
+    <form action="/addTodo/" method="POST">{% csrf_token %}
+        <input type="text" name="content">
+        <input type="submit" value='Add'>
+    </form>
+
+</body>
+
+</html>

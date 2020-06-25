@@ -1,0 +1,48 @@
+#project-title{
+    position: relative;
+    margin-top: 0;
+}
+#navb{
+    position: relative;
+    height: 10%;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 8px;
+    background-color:green;
+}
+a{
+    color:azure
+}
+/* 
+#content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 1px solid black;
+        margin-top: -50px;
+        margin-left: -100px;
+} */
+
+#content{
+    margin-top: 10px;
+}
+
+
+#blog-content{
+    display: block;
+    height: 50px;
+}
