@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import TodoItems
 from django.http import HttpResponseRedirect
+from .models import TodoItems
 # Create your views here.
 
 
@@ -13,10 +13,10 @@ def addTodo(request):
     item = request.POST['content']
     add_item = TodoItems(content=item)
     add_item.save()
-    return HttpResponseRedirect('/todo/')
+    return HttpResponseRedirect('/')
 
 
 def deleteTodo(request, item_id):
     item = TodoItems.objects.get(id=item_id)
     item.delete()
-    return HttpResponseRedirect('/todo/')
+    return HttpResponseRedirect('/')
